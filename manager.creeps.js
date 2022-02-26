@@ -166,6 +166,13 @@ class ManagerCreeps {
         console.log('Creep Role registered:', JSON.stringify(role));
         return true;
     }
+
+    SetWorkerTarget(roleName, minWorkers, maxWorkers) {
+        if(minWorkers !== undefined)
+            this.roles[roleName].minWorkers = minWorkers;
+        if(maxWorkers !== undefined)
+            this.roles[roleName].maxWorkers = maxWorkers;
+    }
 }
 
 const _instance = new ManagerCreeps();
