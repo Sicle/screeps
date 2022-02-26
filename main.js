@@ -1,11 +1,14 @@
-console.log( 'Test' );
+let CreepManager = require('manager.creeps');
+let roleHarvester = require('role.harvester');
+let roleUpgrader = require('role.upgrader');
+//var roleBuilder = require('role.builder');
 
-/*
-var roleHarvester = require('role.harvester');
-var roleUpgrader = require('role.upgrader');
-var roleBuilder = require('role.builder');
+CreepManager.RegisterRole('harvester', roleHarvester, 1, 1);
+CreepManager.RegisterRole('upgrader', roleUpgrader, 1, 1);
 
 module.exports.loop = function () {
+    CreepManager.Loop();
+
 /*
     var tower = Game.getObjectById('c9daee2a3b463952cb90c46a');
     if(tower) {
@@ -20,19 +23,6 @@ module.exports.loop = function () {
         if(closestHostile) {
             tower.attack(closestHostile);
         }
-    }*//*
-
-for(var name in Game.creeps) {
-    var creep = Game.creeps[name];
-    if(creep.memory.role == 'harvester') {
-        roleHarvester.run(creep);
-    }
-    if(creep.memory.role == 'upgrader') {
-        roleUpgrader.run(creep);
-    }
-    if(creep.memory.role == 'builder') {
-        roleBuilder.run(creep);
-    }
-}
-}
- */
+    }*/
+};
+ 

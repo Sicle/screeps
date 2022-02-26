@@ -28,7 +28,7 @@
     }
 };*/
 
-class Builder {
+class RoleBuilder {
     constructor(creep) {
         this._creep = creep;
     }
@@ -68,4 +68,4 @@ class Builder {
     }
 }
 
-module.exports = Builder;
+module.exports = RoleBuilder;
