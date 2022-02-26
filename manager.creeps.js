@@ -173,6 +173,10 @@ class ManagerCreeps {
         if(maxWorkers !== undefined)
             this.roles[roleName].maxWorkers = maxWorkers;
     }
+
+    GetWorkerTarget(roleName) {
+        return {minWorkers: this.roles[roleName].minWorkers, maxWorkers: this.roles[roleName].maxWorkers};
+    }
 }
 
 const _instance = new ManagerCreeps();
