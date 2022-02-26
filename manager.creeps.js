@@ -14,7 +14,7 @@ class ManagerCreeps {
 
     Loop() {
         // Reset lists
-        this.spawning = Game.spawns['Spawn1'].spawning;
+        this.spawning = Game.spawns['Spawn_1'].spawning;
 
         for(let roleName in this.roles) {
             if(!this.roles.hasOwnProperty(roleName))
@@ -81,12 +81,12 @@ class ManagerCreeps {
         let name = this._GetNextWorkerName(role);
         let cost = this._CalcBodyCost(role.role.bodyParts);
 
-        if(cost > Game.spawns['Spawn1'].store[RESOURCE_ENERGY]) {
+        if(cost > Game.spawns['Spawn_1'].store[RESOURCE_ENERGY]) {
             console.log('No energy.');
             return true;
         }
 
-        let result = Game.spawns['Spawn1'].createCreep(role.role.bodyParts, name, {'role': role.name});
+        let result = Game.spawns['Spawn_1'].createCreep(role.role.bodyParts, name, {'role': role.name});
         //let result = -10;
         if(result) {
             console.log('Spawn successfull');
