@@ -47,6 +47,7 @@ class ManagerCreeps {
 
 
         // Check if we need to spawn creeps
+        let stopSpawning = false;
         if(!this.spawning) {
             for(let roleName in this.roles) { // Min worker check
                 if(!this.roles.hasOwnProperty(roleName))
@@ -57,12 +58,15 @@ class ManagerCreeps {
                 if(role.currentWorkerCount < role.minWorkers) {
                     console.log(`Spawning creep for Min requirement of '${roleName}'`);
                     let result = this._SpawnWorker(role);
-                    if(result) break;
+                    if(result){
+                        stopSpawning = true;
+                        break;
+                    }
                 }
             }
         }
 
-        if(!this.spawning) {
+        if(!this.spawning || stopSpawning) {
             for (let roleName in this.roles) { // Max worker check
                 if (!this.roles.hasOwnProperty(roleName))
                     continue;
