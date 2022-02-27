@@ -56,7 +56,7 @@ class ManagerCreeps {
                 let role = this.roles[roleName];
                 //console.log(`Min workers: ${role.minWorkers}, Max workers: ${role.maxWorkers}, Live workers: ${role.currentWorkerCount}`);
                 if(role.currentWorkerCount < role.minWorkers) {
-                    console.log(`Spawning creep for Min requirement of '${roleName}'`);
+                    //console.log(`Spawning creep for Min requirement of '${roleName}'`);
                     let result = this._SpawnWorker(role);
                     if(result){
                         stopSpawning = true;
@@ -73,7 +73,7 @@ class ManagerCreeps {
 
                 let role = this.roles[roleName];
                 if (role.currentWorkerCount < role.maxWorkers) {
-                    console.log(`Spawning creep for Max of '${roleName}'`);
+                    //console.log(`Spawning creep for Max of '${roleName}'`);
                     let result = this._SpawnWorker(role);
                     if(result) break;
                 }
@@ -86,7 +86,7 @@ class ManagerCreeps {
         let cost = this._CalcBodyCost(role.role.bodyParts);
 
         if(cost > Game.spawns['Spawn_1'].room.energyAvailable) {
-            console.log('No energy.');
+            //console.log('No energy.');
             return true;
         }
 
