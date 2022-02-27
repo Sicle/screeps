@@ -25,7 +25,7 @@ class RoleUpgrader {
         }
     }
 
-    static get bodyParts() { return [MOVE, WORK, CARRY]; }
+    static get bodyParts() { return [MOVE, MOVE, WORK, WORK, WORK, CARRY]; }
 }
 
 module.exports = RoleUpgrader;

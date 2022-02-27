@@ -1,10 +1,11 @@
 let CreepManager = require('manager.creeps');
 let roleHarvester = require('role.harvester');
 let roleUpgrader = require('role.upgrader');
-//var roleBuilder = require('role.builder');
+let roleBuilder = require('role.builder');
 
-CreepManager.RegisterRole('harvester', roleHarvester, 1, 1);
-CreepManager.RegisterRole('upgrader', roleUpgrader, 1, 1);
+CreepManager.RegisterRole('harvester', roleHarvester, 2, 2);
+CreepManager.RegisterRole('upgrader', roleUpgrader, 2, 4);
+CreepManager.RegisterRole('builder', roleBuilder, 0, 1);
 
 module.exports.loop = function () {
     CreepManager.Loop();

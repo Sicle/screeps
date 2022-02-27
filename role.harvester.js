@@ -5,8 +5,8 @@ class RoleHarvester {
     static run(creep) {
         if(creep.store.getFreeCapacity() > 0) {
             let sources = creep.room.find(FIND_SOURCES);
-            if(creep.harvest(sources[0]) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+            if(creep.harvest(sources[1]) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(sources[1], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
         else {
@@ -26,7 +26,8 @@ class RoleHarvester {
         }
     }
 
-    static get bodyParts() { return [MOVE, WORK, CARRY]; }
+
+    static get bodyParts() { return [MOVE, MOVE, WORK, WORK, WORK, CARRY]; }
     static get structureFilter() { [STRUCTURE_EXTENSION, STRUCTURE_SPAWN, STRUCTURE_TOWER]; }
 }
 

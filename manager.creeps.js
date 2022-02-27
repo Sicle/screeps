@@ -85,7 +85,7 @@ class ManagerCreeps {
         let name = this._GetNextWorkerName(role);
         let cost = this._CalcBodyCost(role.role.bodyParts);
 
-        if(cost > Game.spawns['Spawn_1'].store[RESOURCE_ENERGY]) {
+        if(cost > Game.spawns['Spawn_1'].room.energyAvailable) {
             console.log('No energy.');
             return true;
         }
